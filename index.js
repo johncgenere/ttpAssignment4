@@ -17,21 +17,22 @@ function removeRow(){
   parent.removeChild(rmRow);
 }
 
-function addCol(){
+const addColByIndex = (function(index){
   let table = document.getElementById('table');
   let allRows = table.childNodes[1].children;
   let getCol = document.getElementById('cell');
   let cloned = getCol.cloneNode(true);
 
-  for (var i = 0; i < allRows.length; i++) {
-    console.log(allRows[i].appendChild(cloned));
-  }
+  allRows[index].appendChild(cloned);
+})
 
-  // console.log(table);
-  // console.log(allRows);
-  // console.log(getCol);
-  // console.log(cloned);
-  // allRows.appendChild(cloned);
+function addCol(){
+  let table = document.getElementById('table');
+  let allRows = table.childNodes[1].children;
+
+  for(let i = 0; i < allRows.length; i++){
+    addColByIndex(i);
+  }
 }
 
 function removeCol(){
