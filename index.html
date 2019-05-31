@@ -1,162 +1,117 @@
 <head>
   <link rel="stylesheet" href="index.css">
-  <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
-  <h1>Rows</h1>
-  <h1>Column</h1>
-  <h1>Color</h1>
+  <p>
+    Rows
+    <button type="button" id="addRow" class="myButton" onclick="addRow()"> + </button>
+    <button type="button" id="removeRow" class="myButton" onclick="removeRow()"> -- </button>
+  </p>
+  <p>
+    Column
+    <button type="button" id="addCol" class="myButton" onclick="addCol()"> + </button>
+    <button type="button" id="removeCol" class="myButton" onclick="removeCol()"> -- </button>
+  </p>
+  <p>
+    Color
+    <select id="colors">
+      <option value="white">White</option>
+      <option value="grey">Grey</option>
+      <option value="black">Black</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="orange">Orange</option>
+    </select>
+    <button type="button" class="myButton" onclick="getColor()"> Set New Color </button>
+  </p>
 
   <table id="table">
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
+      <td id="cell"></td>
     </tr>
   </table>
 
-  <button type="button" name="button" class="myButton" onclick="start()"> Start </button>
-
-  <h1>Color All</h1>
-  <h1>Reset</h1>
+  <button type="button" id="start" class="myButton" onclick="start()"> Start </button>
+  <button type="button" id="setAll" class="myButton" onclick="setAll()"> Color All </button>
+  <button type="button" id="resetAll" class="myButton" onclick="resetAll()"> Reset </button>
+  <script type="text/javascript" src="index.js"></script>
 </body>
