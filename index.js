@@ -45,10 +45,14 @@ const removeColByIndex = (function(index){
 function removeCol(){
   let table = document.getElementById('table');
   let allRows = table.childNodes[1].children;
-  
+
   for(let i = 0; i < allRows.length; i++){
     removeColByIndex(i);
   }
+}
+
+function cellChange(cell){
+  cell.style.backgroundColor = getColor();
 }
 
 function getColor(){
