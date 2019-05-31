@@ -18,9 +18,7 @@ function removeRow(){
   parent.removeChild(rmRow);
 }
 
-const addColByIndex = (function(index){
-  let table = document.getElementById('table');
-  let allRows = table.childNodes[1].children;
+const addColByIndex = (function(allRows, index){
   let getCol = document.getElementById('cell');
   let cloned = getCol.cloneNode(true);
 
@@ -32,12 +30,11 @@ function addCol(){
   let allRows = table.childNodes[1].children;
 
   for(let i = 0; i < allRows.length; i++){
-    addColByIndex(i);
+    addColByIndex(allRows, i);
   }
 }
 
-const removeColByIndex = (function(index){
-  let table = document.getElementById('table');
+const removeColByIndex = (function(table, index){
   let currCol = table.childNodes[1].children[index];
   let remove = currCol.children[0];
   currCol.removeChild(remove);
@@ -48,7 +45,7 @@ function removeCol(){
   let allRows = table.childNodes[1].children;
 
   for(let i = 0; i < allRows.length; i++){
-    removeColByIndex(i);
+    removeColByIndex(table, i);
   }
 }
 
