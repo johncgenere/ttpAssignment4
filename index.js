@@ -24,7 +24,7 @@ const addColByIndex = (function(index){
   let cloned = getCol.cloneNode(true);
 
   allRows[index].appendChild(cloned);
-})
+});
 
 function addCol(){
   let table = document.getElementById('table');
@@ -35,8 +35,20 @@ function addCol(){
   }
 }
 
+const removeColByIndex = (function(index){
+  let table = document.getElementById('table');
+  let currCol = table.childNodes[1].children[index];
+  let remove = currCol.children[0];
+  currCol.removeChild(remove);
+});
+
 function removeCol(){
-  console.log('clicked removecol');
+  let table = document.getElementById('table');
+  let allRows = table.childNodes[1].children;
+  
+  for(let i = 0; i < allRows.length; i++){
+    removeColByIndex(i);
+  }
 }
 
 function getColor(){
