@@ -1,6 +1,7 @@
 function start(){
   document.getElementById('table').style.display = 'flex';
   document.getElementById('start').style.display = 'none';
+  document.getElementById('title').style.display = 'none';
 }
 
 function addRow(){
