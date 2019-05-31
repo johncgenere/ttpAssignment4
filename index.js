@@ -10,19 +10,28 @@ function addRow(){
   allRows.childNodes[1].appendChild(cloned);
 }
 
-function removeRow(btn){
-  console.log('clicked removerow');
-
+function removeRow(){
+  let table = document.getElementById('table');
+  let rmRow = table.childNodes[1].children[0];
+  let parent = rmRow.parentElement;
+  parent.removeChild(rmRow);
 }
 
 function addCol(){
-  let allRows = document.getElementsByTagName('tr');
-  let newRow = document.getElementById('cell');
-  let cloned = newRow.cloneNode(true);
-  for (let i = 0; i < allRows.length;i++) {
-    console.log(allRows[i]);
-    allRows[i].appendChild(cloned);
+  let table = document.getElementById('table');
+  let allRows = table.childNodes[1].children;
+  let getCol = document.getElementById('cell');
+  let cloned = getCol.cloneNode(true);
+
+  for (var i = 0; i < allRows.length; i++) {
+    console.log(allRows[i].appendChild(cloned));
   }
+
+  // console.log(table);
+  // console.log(allRows);
+  // console.log(getCol);
+  // console.log(cloned);
+  // allRows.appendChild(cloned);
 }
 
 function removeCol(){
