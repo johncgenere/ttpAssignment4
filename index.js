@@ -53,6 +53,27 @@ function cellChange(cell){
   cell.style.backgroundColor = getColor();
 }
 
+let on = false;
+
+function up(cell){
+  cellChange(cell);
+  on = false;
+}
+
+function down(cell){
+  console.log(on);
+  cellChange(cell);
+  on = true;
+  console.log(on);
+}
+
+function over(cell){
+  console.log('something');
+  if (on === true) {
+    cellChange(cell);
+  }
+}
+
 function getColor(){
   let selectedColor = document.getElementById("colors").selectedIndex;
   let allOptions = document.getElementById("colors").options;
