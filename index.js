@@ -47,20 +47,20 @@ function addCol(){
 const removeColByIndex = (function(table, index){
   let currCol = table.childNodes[1].children[index];
   let length = currCol.children.length
-  if(length === 1){
-    window.alert('CAN\'T REMOVE THE LAST COLUMN!');
-  } else {
-    let remove = currCol.children[length-1];
-    currCol.removeChild(remove);
-  }
+  let remove = currCol.children[length-1];
+  currCol.removeChild(remove);
 });
 
 function removeCol(){
   let table = document.getElementById('table');
   let allRows = table.childNodes[1].children;
-
-  for(let i = 0; i < allRows.length; i++){
-    removeColByIndex(table, i);
+  let length = table.childNodes[1].children[0].children.length;
+  if(length === 1){
+    window.alert('CAN\'T REMOVE THE LAST COLUMN!');
+  } else {
+    for(let i = 0; i < allRows.length; i++){
+      removeColByIndex(table, i);
+    }
   }
 }
 
