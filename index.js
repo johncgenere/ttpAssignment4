@@ -17,10 +17,11 @@ function addRow(){
 
 function removeRow(){
   let table = document.getElementById('table');
-  if(table.childNodes[1].children.length === 1){
+  let length = table.childNodes[1].children.length;
+  if(length === 1){
     window.alert('CAN\'T REMOVE THE LAST ROW!');
   } else {
-    let rmRow = table.childNodes[1].children[0];
+    let rmRow = table.childNodes[1].children[length-1];
     let parent = rmRow.parentElement;
     parent.removeChild(rmRow);
   }
@@ -45,10 +46,11 @@ function addCol(){
 
 const removeColByIndex = (function(table, index){
   let currCol = table.childNodes[1].children[index];
-  if(currCol.children.length === 1){
+  let length = currCol.children.length
+  if(length === 1){
     window.alert('CAN\'T REMOVE THE LAST COLUMN!');
   } else {
-    let remove = currCol.children[0];
+    let remove = currCol.children[length-1];
     currCol.removeChild(remove);
   }
 });
