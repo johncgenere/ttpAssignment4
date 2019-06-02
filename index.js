@@ -8,19 +8,28 @@ function addRow(){
   let allRows = document.getElementById('table');
   let getRow = allRows.childNodes[1].children[0];
   let cloned = getRow.cloneNode(true);
+  let allCells = cloned.children;
+  for (var i = 0; i < allCells.length; i++) {
+    allCells[i].style.backgroundColor = 'white';
+  }
   allRows.childNodes[1].appendChild(cloned);
 }
 
 function removeRow(){
   let table = document.getElementById('table');
-  let rmRow = table.childNodes[1].children[0];
-  let parent = rmRow.parentElement;
-  parent.removeChild(rmRow);
+  if(table.childNodes[1].children.length === 1){
+    window.alert('CAN\'T REMOVE THE LAST ROW!');
+  } else {
+    let rmRow = table.childNodes[1].children[0];
+    let parent = rmRow.parentElement;
+    parent.removeChild(rmRow);
+  }
 }
 
 const addColByIndex = (function(allRows, index){
   let getCol = document.getElementById('cell');
   let cloned = getCol.cloneNode(true);
+  cloned.style.backgroundColor = 'white';
 
   allRows[index].appendChild(cloned);
 });
@@ -36,8 +45,12 @@ function addCol(){
 
 const removeColByIndex = (function(table, index){
   let currCol = table.childNodes[1].children[index];
-  let remove = currCol.children[0];
-  currCol.removeChild(remove);
+  if(currCol.children.length === 1){
+    window.alert('CAN\'T REMOVE THE LAST COLUMN!');
+  } else {
+    let remove = currCol.children[0];
+    currCol.removeChild(remove);
+  }
 });
 
 function removeCol(){
@@ -61,14 +74,11 @@ function up(cell){
 }
 
 function down(cell){
-  console.log(on);
   cellChange(cell);
   on = true;
-  console.log(on);
 }
 
 function over(cell){
-  console.log('something');
   if (on === true) {
     cellChange(cell);
   }
